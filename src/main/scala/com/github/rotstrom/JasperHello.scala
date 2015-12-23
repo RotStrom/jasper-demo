@@ -25,7 +25,11 @@ object JasperHello {
       val source = getClass.getResource("/hello.xml").getPath
       val dest = source.stripSuffix(".xml") + ".jasper"
       JasperCompileManager.compileReportToFile(source, dest)
-      val jasperPrint = JasperFillManager.fillReport(dest, mutable.Map[String, AnyRef](), new JREmptyDataSource())
+      val jasperPrint = JasperFillManager.fillReport(
+        dest,
+        mutable.Map[String, AnyRef]("param" → "тестовый параметр"),
+        new JREmptyDataSource()
+      )
       JasperExportManager.exportReportToPdfFile(jasperPrint, "target/hello.pdf")
     } catch {
       case e: Throwable ⇒ e.printStackTrace()
