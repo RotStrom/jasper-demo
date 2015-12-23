@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN"-->
+<!--"http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="93561374-f8c5-4685-98b7-25b9aba0d24e" language="java">
+    <style name="Normal" isDefault="true" pdfEncoding="Cp1251"
+           pdfFontName="/usr/share/fonts/truetype/msttcorefonts/Comic_Sans_MS_Bold.ttf"/>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <staticText>
+                <reportElement x="180" y="0" width="200" height="20"/>
+                <!--<text>Тест!!</text>-->
+                <text><![CDATA[Тест!!]]></text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport>
