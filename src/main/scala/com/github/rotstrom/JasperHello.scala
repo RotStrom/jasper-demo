@@ -1,6 +1,8 @@
 package com.github.rotstrom
 
 import net.sf.jasperreports.engine._
+import net.sf.jasperreports.engine.base.JRBaseField
+import net.sf.jasperreports.engine.design.{JRDesignField, JRDesignTextField}
 
 import scala.collection.JavaConversions._
 import scala.collection.mutable
@@ -22,13 +24,30 @@ object JasperHello {
 
   def main(args: Array[String]): Unit = {
     try {
+      val severalElemsDS = new JRDataSource {
+        val data = Array("Текстовое поле1", "Текстовое поле2", "Текстовое поле3")
+
+        var i: Int = -1
+        override def next(): Boolean = {
+          println("next " + i + " " + data.length)
+          i += 1
+          i < data.length
+        }
+        override def getFieldValue(jrField: JRField): AnyRef = {
+          println("get value")
+          data(i)
+        }
+      }
+
+
       val source = getClass.getResource("/hello.xml").getPath
       val dest = source.stripSuffix(".xml") + ".jasper"
       JasperCompileManager.compileReportToFile(source, dest)
+
       val jasperPrint = JasperFillManager.fillReport(
         dest,
         mutable.Map[String, AnyRef]("param" → "тестовый параметр"),
-        new JREmptyDataSource()
+        severalElemsDS
       )
       JasperExportManager.exportReportToPdfFile(jasperPrint, "target/hello.pdf")
     } catch {
