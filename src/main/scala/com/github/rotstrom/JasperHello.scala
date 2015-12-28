@@ -1,8 +1,6 @@
 package com.github.rotstrom
 
 import net.sf.jasperreports.engine._
-import net.sf.jasperreports.engine.base.JRBaseField
-import net.sf.jasperreports.engine.design.{JRDesignField, JRDesignTextField}
 
 import scala.collection.JavaConversions._
 import scala.collection.mutable

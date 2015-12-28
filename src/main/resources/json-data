@@ -1,0 +1,5 @@
+[
+["01.01.2025 17:00", "378", "shortemail@email.com", "from", "to", "subj", ["39394.zip", "23423.zip", "lolo.docx"]],
+["01.01.2025 17:00", "378", "verylongemailveryveryverylongemail@email.com", "from", "to", "subj", ["39394.zip", "23423.zip", "lolo.docx"]],
+["01.01.2025 17:00", "3780000", "simpleemail@email.com", "from", "to", "subj", ["39394.zip", "23423.zip", "lolo.docx"]]
+]
