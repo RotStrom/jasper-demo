@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" language="java">
+  <style name="normal" isDefault="true" pdfEncoding="Cp1251"
+         pdfFontName="Comic_Sans_MS_Bold.ttf" isPdfEmbedded="true" fontSize="8"/>
+
+  <subDataset name="sub">
+    <field name="field" class="java.lang.String"/>
+  </subDataset>
+
+  <parameter name="fields" class="net.sf.jasperreports.engine.JRDataSource"/>
+
+  <detail>
+    <band height="50">
+      <componentElement>
+        <reportElement x="20" y="0" width="500" height="40"/>
+        <c:list xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components"
+                xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd"
+                printOrder="Horizontal">
+
+          <datasetRun subDataset="sub">
+            <dataSourceExpression><![CDATA[$P{fields}]]></dataSourceExpression>
+          </datasetRun>
+
+          <c:listContents height="15" width="15">
+            <textField isStretchWithOverflow="true">
+              <reportElement x="0" y="0" width="10" height="12"/>
+              <textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+            </textField>
+          </c:listContents>
+        </c:list>
+      </componentElement>
+    </band>
+  </detail>
+</jasperReport>
